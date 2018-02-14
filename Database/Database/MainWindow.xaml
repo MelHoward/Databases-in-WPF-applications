@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:Database"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Button Name="Click" Content="See Assets" HorizontalAlignment="Left" Margin="77,34,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <TextBox Name="View" HorizontalAlignment="Left" Margin="131,88,0,116.8" TextWrapping="Wrap" Width="256" TextChanged="TextBox_TextChanged"/>
+    <Grid x:Name="Main_Menu" Background="#FF373535" Grid.IsSharedSizeScope="True">
+        <Button Name="Click" Content="See Assets" HorizontalAlignment="Left" Margin="74,33,0,0" VerticalAlignment="Top" Width="86" Click="_Click" Background="#FF838181" Foreground="White"/>
+        <TextBox Name="View" HorizontalAlignment="Left" Margin="123,131,0,73.8" TextWrapping="Wrap" Width="256" TextChanged="TextBox_TextChanged" Background="#FF2B2727" RenderTransformOrigin="0.497,0.406" Foreground="White"/>
+        <Button x:Name="ViewEmpl" Content="See Employees" HorizontalAlignment="Left" Margin="74,69,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click" Background="#FF838181" Foreground="White"/>
 
     </Grid>
 </Window>

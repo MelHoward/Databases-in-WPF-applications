@@ -29,7 +29,7 @@ namespace Database
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void _Click(object sender, RoutedEventArgs e)
         {
             string query = "select * from Assets";
             OleDbCommand cmd = new OleDbCommand(query, cn);
@@ -38,14 +38,29 @@ namespace Database
             string data = "";
             while (read.Read())
             {
-                data += read[0].ToString() + "\n";
+                data += read[0].ToString() + "\t" + read[1].ToString() + "\t "  +  read[2].ToString() + "\n";
             }
+            View.Text = data;
             cn.Close();
         }
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            OleDbCommand cm = new OleDbCommand("SELECT [Names].* FROM[Names]", cn);
+            cn.Open();
+            OleDbDataReader read = cm.ExecuteReader();
+            string data = "";
+            while (read.Read())
+            {
+                data += read[0].ToString() + "\t" + read[1].ToString() + "\t " + read[2].ToString() + "\n";
+            }
+            View.Text = data;
+            cn.Close();
+        }
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
+
+   
     }
 }
